@@ -7,7 +7,8 @@ bingUrl = "https://www.bing.com"
 xmlUrl = "/HPImageArchive.aspx?idx=0&n=1"
 enUrl = "&ensearch=1"
 finalUrl = bingUrl + xmlUrl
-if sys.argv[1] == 'en':
+
+if len(sys.argv) > 1 and sys.argv[1] == 'en':
     finalUrl += enUrl
 
 data = urllib.request.urlopen(finalUrl).read().decode(encoding="utf8")
